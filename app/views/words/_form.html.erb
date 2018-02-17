@@ -1,0 +1,28 @@
+<%= form_with(model: word, local: true, url: choose_new_or_edit) do |form| %>
+  <% if word.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(word.errors.count, "error") %> prohibited this word from being saved:</h2>
+
+      <ul>
+      <% word.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= form.text_area :content, id: :word_content, :size => "50x4",
+    placeholder: "（35文字以内）
+　赤い椿
+　白い椿と
+　落ちにけり" %>
+  </div>
+  <div class="field">
+    <%= form.text_field :tag_list, value: word.tag_list.join(','), placeholder: "タグ1,タグ2" %>
+  </div>
+  <p>
+  <div class="actions">
+    <%= form.submit "送", :class => 'btn btn-default', class:"short_input" %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-12 text-center">
+
+    <div class="syotai_row">
+      <!-- ブックマーク機能 -->
+      <% if @favorite.present? %>
+        <%= link_to image_tag("/assets/on-bookmark.png"), favorite_path(word_id: @word.id), method: :delete %>
+      <% else %>
+        <%= link_to image_tag("/assets/out-bookmark.png"), favorites_path(word_id: @word.id), method: :post %>
+      <% end %>
+      <!-- ここまで -->
+      
+        <%= simple_format(h(@word.content)) %>
+      </p>
+
+      <p>
+        <%=link_to @word.user.name, user_path(@user) %>
+        <div id='tag_cloud'>
+          <% tag_cloud @word.tag_counts, %w{s m l} do |tag, css_class| %>
+            ＃<%= link_to tag.name, tag_path(tag.name), class: css_class %>
+          <% end %>
+        </div>
+      </p>
+
+      <% if @word.user == current_user %>
+        <%= link_to 'Edit', edit_word_path(@word) %>
+         |
+        <%= link_to 'Destroy', @word, method: :delete, data: { confirm: '削除しますか？' } %>
+      <% end %>
+         |
+      <%= link_to 'Back', words_path %>
+    </div>
+  </div>
+</div>

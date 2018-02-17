@@ -1,0 +1,91 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <title>言葉あつめ</title>
+    <%= csrf_meta_tags %>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+
+    <!-- Custom styles for this template -->
+    <style>
+      body {
+        padding-top: 54px;
+      }
+      @media (min-width: 992px) {
+        body {
+          padding-top: 56px;
+        }
+      }
+
+    </style>
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+          
+          <!-- ログイン中 -->  
+            <% if logged_in? %>
+            <li class="nav-item active">
+              <%= link_to image_tag("/assets/login.png", :alt => "ログアウト"), session_path(current_user.id), method: :delete %>
+            </li>
+            <li class="nav-item active">
+              <%= link_to "HOME", words_path, class:"nav-link" %>
+            </li>
+            <!-- モーダルウィンドウ -->
+            <li class="nav-item">
+              <div id="modal-content">
+                <%= link_to '作成', new_word_path, class:"nav-link" %>
+                
+              </div>
+            </li>
+            <!-- ここまで -->
+            <li class="nav-item">
+              <%= link_to '一覧', user_path(current_user.id), class:"nav-link" %>
+            </li>
+          <!-- ログイン中 -->
+            
+            <% else %>
+          
+          <!-- ログアウト -->  
+            <li class="nav-item">
+              <%= link_to image_tag("/assets/logout.png", :alt => "ログイン"), new_session_path %>
+            </li>
+            <li class="nav-item active">
+              <%= link_to "HOME", words_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "新規登録", new_user_path, class:"nav-link" %>
+            </li>
+          <!-- ログアウト -->
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <%= yield %>
+
+  
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

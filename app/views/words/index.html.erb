@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-12 text-center">
+    
+    <h1>言葉あつめ</h1>
+  
+    <%= form_tag words_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "探", :name => nil, class:"short_input" %>
+    </p>
+    <% end %>
+  
+    <table class="syotai_row">
+      <tbody>
+        <% @search_words.each do |word| %>
+        <tr><td>
+          
+          <dl id="panel">
+            <dt><%= link_to word.content, word %></dt>
+            <dd>
+              <div id='tag_cloud'>
+              <% tag_cloud word.tag_counts, %w{s m l} do |tag, css_class| %>
+                <%= link_to word.user.name, user_path(word.user_id) %>
+                 |
+                ＃<%= link_to tag.name, tag_path(tag.name), class: css_class %>
+              <% end %>
+              </div>
+            </dd>
+          </dl>
+        </td></tr>
+        <% end %>
+        
+        <tr><td>
+          <a href="/tags/詩">詩</a>
+          <a href="/tags/短歌">歌</a>
+          <a href="/tags/俳句">句</a>
+          <a href="#">文</a>
+        </td></tr>
+      </tbody>
+    </table>
+    </p>
+    </div>
+  </div>
+</div>

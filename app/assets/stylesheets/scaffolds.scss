@@ -1,0 +1,131 @@
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 2em;
+  
+}
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  line-height: 2em;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #666;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+th {
+  padding-bottom: 5px;
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px -7px 0;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+label {
+  display: block;
+}
+
+.syotai_row{
+  position: relative;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  font-size: 23px;
+  font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", serif;
+  text-align: left;
+  letter-spacing: 0.15em;
+  line-height: 2em;
+  margin: 0 auto 0 auto;
+  display: inline-block;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 30%;
+  margin-bottom: 15px;
+}
+
+.short_input {
+  width: 5%;
+}
+
+#tag_cloud {
+  width: 20px;
+  line-height: 1.6em;
+  .s { font-size: 0.8em; }
+  .m { font-size: 0.8em; }
+  .l { font-size: 0.8em; }
+}
+
+ 
+#panel > dt {
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0 auto;
+  padding-top: 10px;
+  font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", serif;
+}
+ 
+#panel > dd {
+  margin: 0px;
+  font-size: 16px;
+  font-family: verdana, arial, helvetica, sans-serif;
+}
+
+table {
+  padding: 30px;
+}
+
+.sub_menu {
+  margin: 0px;
+  font-size: 16px;
+  font-family: verdana, arial, helvetica, sans-serif;
+}
