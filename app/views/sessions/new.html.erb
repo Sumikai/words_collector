@@ -10,10 +10,10 @@
       <br>
       <%= form_with(scope: :session, url: sessions_path) do |form| %>
 
-        <%= form.label :email %>
+        <%= form.label :'メールアドレス' %>
         <%= form.email_field :email %>
 
-        <%= form.label :password %>
+        <%= form.label :'パスワード' %>
         <%= form.password_field :password %>
         
         <br><br>
