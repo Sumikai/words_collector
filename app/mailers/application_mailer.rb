@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: '「言葉あつめ」'
+  default from: 'from@example.com'
   layout 'mailer'
 end
