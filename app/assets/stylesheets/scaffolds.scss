@@ -2,14 +2,14 @@ body {
   background-color: #fff;
   color: #333;
   margin: 33px;
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: 'FOT-筑紫B丸ゴシック Std R','TsukuBRdGothicStd-R',sans-serif;
   font-size: 13px;
   line-height: 2em;
   
 }
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
+ol, ul{
+  font-family: 'FOT-筑紫B丸ゴシック Std R','TsukuBRdGothicStd-R',sans-serif;
   line-height: 2em;
 }
 
@@ -23,7 +23,8 @@ a {
   color: #666;
 
   &:hover {
-    color: #fff;
+    color: #DCDCDC;
+    text-decoration: none;
   }
 }
 
@@ -45,6 +46,7 @@ div {
   padding: 2px;
   background-color: red;
   display: table;
+  display: inline-block;
 }
 
 #error_explanation {
@@ -53,6 +55,7 @@ div {
   padding: 7px 7px 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
+  display: inline-block;
 
   h2 {
     text-align: left;
@@ -74,58 +77,74 @@ label {
   display: block;
 }
 
-.syotai_row{
+.syotai_row {
   position: relative;
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
+  text-orientation: upright;
   font-size: 23px;
-  font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", serif;
   text-align: left;
   letter-spacing: 0.15em;
+  column-count: auto;
+  column-gap: 30px;
   line-height: 2em;
   margin: 0 auto 0 auto;
   display: inline-block;
+  height: 450px;
+  max-width: 800px;
+}
+
+.yoko {
+  text-combine-upright: all;
+  padding-top: 100px;
+  font-size: 2.5rem;
 }
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 30%;
+  width: 250px;
   margin-bottom: 15px;
 }
 
 .short_input {
-  width: 5%;
+  width: 60px;
 }
-
-#tag_cloud {
-  width: 20px;
-  line-height: 1.6em;
-  .s { font-size: 0.8em; }
-  .m { font-size: 0.8em; }
-  .l { font-size: 0.8em; }
-}
-
  
-#panel > dt {
+.panel {
+  width: auto;
   cursor: pointer;
   font-weight: bold;
   margin: 0 auto;
   padding-top: 10px;
+  padding-left: 35px;
   font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", serif;
 }
+
+.panel p {
+  height: 400px;
+}
  
-#panel > dd {
-  margin: 0px;
-  font-size: 16px;
-  font-family: verdana, arial, helvetica, sans-serif;
-}
-
-table {
-  padding: 30px;
-}
-
 .sub_menu {
   margin: 0px;
+  text-align: right;
   font-size: 16px;
-  font-family: verdana, arial, helvetica, sans-serif;
+  letter-spacing: 0.08em;
+  font-weight: normal;
+  font-family: 'FOT-筑紫B丸ゴシック Std R','TsukuBRdGothicStd-R',sans-serif;
+}
+
+.yoko_menu {
+  margin: 0px;
+  width: 350px;
+  logical-width: 30px;
+  text-align: right;
+  display: inline-block;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+}
+
+.tag_menu {
+  text-align: center;
+  font-size: 35px;
+  font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", serif;
 }

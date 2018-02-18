@@ -12,11 +12,9 @@
   <% end %>
   
   <div class="field">
-    <%= form.text_area :content, id: :word_content, :size => "50x4",
+    <%= form.text_area :content, id: :word_content, :size => "60x3",
     placeholder: "（35文字以内）
-　赤い椿
-　白い椿と
-　落ちにけり" %>
+　改行できます。" %>
   </div>
   <div class="field">
     <%= form.text_field :tag_list, value: word.tag_list.join(','), placeholder: "タグ1,タグ2" %>

@@ -37,35 +37,42 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            
-          <!-- HOME -->
-            <li class="nav-item active">
-              <%= link_to "言葉あつめ", words_path, class:"nav-link" %>
-            </li>
+          
           <!-- ログイン中 -->  
             <% if logged_in? %>
+            <li class="nav-item active">
+              <%= link_to image_tag("/assets/login.png", :alt => "ログアウト"), session_path(current_user.id), method: :delete %>
+            </li>
+            <li class="nav-item active">
+              <%= link_to "HOME", words_path, class:"nav-link" %>
+            </li>
+            <!-- モーダルウィンドウ -->
             <li class="nav-item">
               <div id="modal-content">
                 <%= link_to '作成', new_word_path, class:"nav-link" %>
+                
               </div>
             </li>
+            <!-- ここまで -->
             <li class="nav-item">
-              <%= link_to "#{current_user.name}", user_path(current_user.id), class:"nav-link" %>
+              <%= link_to '一覧', user_path(current_user.id), class:"nav-link" %>
             </li>
-            <li class="nav-item">
-              <%= link_to image_tag("/assets/login.png"), session_path(current_user.id), method: :delete %>
-            </li>
+          <!-- ログイン中 -->
             
             <% else %>
           
-          <!-- ログアウト -->
+          <!-- ログアウト -->  
+            <li class="nav-item">
+              <%= link_to image_tag("/assets/logout.png", :alt => "ログイン"), new_session_path %>
+            </li>
+            <li class="nav-item active">
+              <%= link_to "HOME", words_path, class:"nav-link" %>
+            </li>
             <li class="nav-item">
               <%= link_to "新規登録", new_user_path, class:"nav-link" %>
             </li>
-            <li class="nav-item">
-              <%= link_to image_tag("/assets/logout.png"), new_session_path %>
-            </li>
-          <% end %>
+          <!-- ログアウト -->
+            <% end %>
           </ul>
         </div>
       </div>
@@ -73,5 +80,8 @@
     
     <%= yield %>
 
+  
+   
   </body>
+
 </html>

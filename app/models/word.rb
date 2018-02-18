@@ -15,7 +15,7 @@ class Word < ApplicationRecord
     if search
       Word.where(['content LIKE ?', "%#{search}%"])
     else
-      Word.limit(5)
+      Word.limit(7)
     end
   end
   

@@ -27,7 +27,6 @@ class WordsController < ApplicationController
     @word = current_user.words.build(word_params)
     respond_to do |format|
       if @word.save
-        FunctionMailer.function_mail(@word).deliver
         format.html { redirect_to words_path }
         format.json { render :show, status: :created, location: @word }
       else

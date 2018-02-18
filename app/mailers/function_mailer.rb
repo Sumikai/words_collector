@@ -1,7 +1,7 @@
 class FunctionMailer < ApplicationMailer
-  def function_mail(word)
-    @word = word
+  def send_when_create(user)
+    @user = user
     
-    mail to: word.user.email, subject: "Created."
+    mail to: user.email, subject: "ご登録ありがとうございます。"
   end
 end

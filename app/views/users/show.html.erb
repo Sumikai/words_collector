@@ -1,46 +1,54 @@
 <div class="container">
   <div class="row">
   <div class="col-xs-12 col-md-12 text-center">
-    <h1>登録情報</h1>
-    <p><%= image_tag("/assets/ougi.png") %></p>
-    <strong>Name:</strong>
-    <%= @user.name %>
-  </p>
-  <p>
-    <% if @user == current_user %>
-      <%= link_to '編集', edit_user_path(@user) %>
-       |
-      <%= link_to '削除', @user, method: :delete, data: { confirm: '削除しますか？' } %>
-    <% end %>
-  </p>
-  
-    <h1>一覧</h1>
-      <table class="syotai_row">
-        <% @words.each do |word| %>
-        <tr><td>
+    <center>
+      
+    <!-- ユーザー情報 -->
+      <h1>登録情報</h1>
+      <p><%= image_tag("/assets/ougi.png") %></p>
+      
+      <strong>Name:</strong>
+      <%= @user.name %>
+      <br>
+      <% if @user == current_user %>
+        <%= link_to '編集', edit_user_path(@user) %>
+         |
+        <%= link_to '削除', @user, :style=>"color:#ff0000;", method: :delete, data: { confirm: '登録を削除しますか？' } %>
+      <% end %>
+    </center>
+    
+  <!-- ユーザーの投稿一覧 -->
+    <table class="syotai_row">
+      <h1 class="yoko">一覧</h1>
+        
+      <% @words.each do |word| %>
+      <tr><td>
+        <div class="panel">
           <%= link_to word.content, word %>
+        </div>
         </td></tr>
+        <% end %>
+    </table>
+    
+  <!-- お気に入り一覧 -->
+    <table class="syotai_row">
+      <h1 class="yoko">付箋</h1>
+      
+      <% @favorites.each do |word| %>
         <tr><td>
-          <% if word.user == current_user %>　
-            <%= link_to '編集', edit_word_path(word), class:"sub_menu" %>
-           ／
-            <%= link_to '削除', word, method: :delete, data: { confirm: 'Are you sure?' }, class:"sub_menu" %>
+          <div class="panel">
+            <%= link_to word.content, word %>
+          </div>
+          
+          <div class="sub_menu">
+          <% tag_cloud word.tag_counts, %w{s m l} do |tag, css_class| %>
+            ＃<%= link_to tag.name, tag_path(tag.name), class: css_class %>
           <% end %>
+          <%= link_to word.user.name, user_path(word.user_id) %>
+          </div>
         </td></tr>
-        <% end %>
-      </table>
-  
-      <h1>付箋</h1>
-      <table class="syotai_row">
-        <% @favorites.each do |word| %>
-        <tr><td>
-          <%= link_to word.content, word %>
-        </td></tr>
-        <tr><td>
-          <%= word.user.name %>
-        </td></tr>
-        <% end %>
-      </table>
+      <% end %>
+    </table>
     </div>
   </div>
 </div>
