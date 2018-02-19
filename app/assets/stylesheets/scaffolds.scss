@@ -89,7 +89,7 @@ label {
   line-height: 2em;
   margin: 0 auto 0 auto;
   display: inline-block;
-  height: auto;
+  height: 80%;
   columns: 14rem;
   width: auto;
   max-width: 100%;
@@ -125,6 +125,7 @@ input, textarea, select, .uneditable-input {
  
 .panel {
   width: auto;
+  height: auto;
   cursor: pointer;
   font-weight: bold;
   margin: 0 auto;
