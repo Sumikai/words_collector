@@ -97,6 +97,25 @@ label {
   -webkit-overflow-scrolling: touch;
 }
 
+.syotai_row {
+  position: relative;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 23px;
+  text-align: left;
+  letter-spacing: 0.15em;
+  column-gap: 30px;
+  line-height: 2em;
+  margin: 0 auto 0 auto;
+  display: inline-block;
+  columns: 14rem;
+  width: auto;
+  max-width: 100%;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+}
+
 .yoko {
   text-combine-upright: all;
   font-size: 23px;
