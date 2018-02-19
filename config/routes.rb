@@ -3,14 +3,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :sessions, only: [:new, :create, :edit, :destroy]
-  resources :favorites, only: [:create, :destroy]
   
-  resources :words do
-    collection do
-      #get :favorite
-      #get :top
-    end
-  end
+  resources :words
+  
+  resources :favorites, only: [:create, :destroy]
   
   #タグのroutes定義
   get 'tags/:tag', to: 'words#index', as: :tag

@@ -72,6 +72,14 @@
     </nav>
     
     <%= yield %>
+    
+  <script>
+    const adjustSize = el => {
+      const fullHeight = el.scrollHeight
+      const defaultHeight = Number(getComputedStyle(el).height.replace('px', ''))
+      el.style.paddingBottom = `${fullHeight - defaultHeight}px`
+    }
+  </script>
 
   </body>
 </html>
