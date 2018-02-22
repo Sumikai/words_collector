@@ -1,11 +1,6 @@
 bookmark_icon = ->
-  $("#bookmark-link").click 'ajax:success', ->
-    $(this).children('i').toggleClass("changed");
-  
-$(document).on('page:change', bookmark_icon);
+  $('#bookmark-link').click ->
+    $(this).children('i').toggleClass('fa-bookmark-o')
 
-#bookmark_icon = ->
- # $("#bookmark-link").click ->
-    #$(this).children('i').toggleClass('fa-bookmark-o')
-
-#$(document).on('page:change', bookmark_icon)
+$(document).ready(bookmark_icon)
+$(document).on('turbolinks:load', bookmark_icon) #'turbolinks:load'によって、turbolinksをoffにすることなくjQueryが読み込める

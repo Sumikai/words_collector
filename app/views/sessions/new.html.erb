@@ -8,6 +8,7 @@
         <%= content_tag(:div, value, class: "#{key}") %>
       <% end %>
       <br>
+      
       <%= form_with(scope: :session, url: sessions_path) do |form| %>
 
         <%= form.label :'メールアドレス' %>

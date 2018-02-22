@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :sessions, only: [:new, :create, :edit, :destroy]
-  resources :favorites, only: [:toggle]
+  resources :favorites, only: [:bookmark]
   
   resources :words do
-    get 'favorites/toggle'
+    get 'favorites/bookmark'
   end
   
   #タグのroutes定義

@@ -90,7 +90,7 @@ label {
   margin: 0 auto 0 auto;
   display: inline-block;
   height: 80%;
-  columns: 14rem;
+  columns: 15rem;
   width: auto;
   max-width: 100%;
   -ms-overflow-style: -ms-autohiding-scrollbar;
@@ -126,10 +126,11 @@ label {
   display: inline-block;
   text-align: left;
   font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", serif;
+  width: 80%;
 }
 
 h1 {
-  padding-top: 100px;
+  padding-top: 80px;
 }
 
 input, textarea, select, .uneditable-input {

@@ -6,7 +6,7 @@
       <tr><td>
       
       <!-- ブックマーク機能 -->
-        <%= link_to word_favorites_toggle_path(@word), id: 'bookmark-link', remote: true do %>
+        <%= link_to word_favorites_bookmark_path(@word), data: { no_turbolink: true }, id: 'bookmark-link', remote: true do %>
           <%=raw favorite_icon(@word, current_user) %>
         <% end %>
 
