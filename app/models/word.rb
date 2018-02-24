@@ -13,7 +13,8 @@ class Word < ApplicationRecord
   #検索機能
   def self.search(search)
     if search
-      Word.where(['content LIKE ?', "%#{search}%"])
+      #["#{search}"]がacts-as-taggable-onを使った場合の引数
+      Word.tagged_with(["#{search}"], :wild => true) | Word.where(['content LIKE ?', "%#{search}%"])
     else
       Word.limit(7)
     end

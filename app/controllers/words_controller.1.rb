@@ -39,7 +39,7 @@ class WordsController < ApplicationController
   # GET /words/1
   # GET /words/1.json
   def show
-    #@favorite = current_user.favorites.find_by(word_id: @word.id)
+    @favorite = current_user.favorites.find_by(word_id: @word.id)
     @user = @word.user_id
     if params[:tag]
       @word = Word.tagged_with(params[:tag])
@@ -50,10 +50,6 @@ class WordsController < ApplicationController
   
   # GET /words/1/edit
   def edit
-  end
-  
-  def tanka
-    
   end
 
   # PATCH/PUT /words/1
@@ -88,6 +84,6 @@ class WordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def word_params
-      params.require(:word).permit(:title, :content, :user_id, :name, :tag_list, :tag_list => [])
+      params.require(:word).permit(:title, :content, :user_id, :name, :tag_list)
     end
 end

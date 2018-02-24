@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get 'favorites/bookmark'
   end
   
-  #タグのroutes定義
+  #タグの定義
   get 'tags/:tag', to: 'words#index', as: :tag
   
   if Rails.env.development?
